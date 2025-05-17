@@ -32,6 +32,7 @@ const PropertyList = () => {
   const deleteProperty = async (id) => {
     try {
       await axios.delete(`${backendUrl}/api/v1/properties/${id}`);
+      console.log(`${backendUrl}/api/v1/properties/${id}`);
       setProperties((prev) => prev.filter((property) => property._id !== id));
     } catch (error) {
       console.error("Delete error:", error);
@@ -81,7 +82,7 @@ const PropertyList = () => {
                   <td className="py-3 px-4">
                     <button
                       onClick={() => deleteProperty(property._id)}
-                      className="text-red-600 hover:text-red-800"
+                      className="text-red-600 hover:text-red-800 cursor-pointer"
                       title="Delete"
                     >
                       <MdDelete size={20} />
