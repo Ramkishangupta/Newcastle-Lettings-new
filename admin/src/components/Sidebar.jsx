@@ -8,7 +8,7 @@ const navItems = [
     icon: PlusCircle,
   },
   {
-    to: '/list-items',
+    to: '/list',
     label: 'List Items',
     icon: ListChecks,
   },
