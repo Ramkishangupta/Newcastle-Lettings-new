@@ -2,14 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { MdDelete } from "react-icons/md";
 import { backendUrl } from "../App";
+import { toast } from "react-toastify"; // <-- Import toast
 
 const PropertyList = () => {
   const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetchProperties();
-  }, []);
 
   useEffect(() => {
     fetchProperties();
@@ -25,17 +22,18 @@ const PropertyList = () => {
       console.error("Failed to fetch properties:", error);
       setProperties([]);
     } finally {
-      setLoading(false); // <-- Important!
+      setLoading(false);
     }
   };
 
   const deleteProperty = async (id) => {
     try {
       await axios.delete(`${backendUrl}/api/v1/properties/${id}`);
-      console.log(`${backendUrl}/api/v1/properties/${id}`);
       setProperties((prev) => prev.filter((property) => property._id !== id));
+      toast.success("Property deleted successfully ✅");
     } catch (error) {
       console.error("Delete error:", error);
+      toast.error("Failed to delete property ❌"); 
     }
   };
 
@@ -51,7 +49,7 @@ const PropertyList = () => {
             <tr>
               <th className="py-3 px-4 text-left">Image</th>
               <th className="py-3 px-4 text-left">Title</th>
-              <th className="py-3 px-4 text-left">Current Status</th>
+              <th className="py-3 px-4 text-left">C. Status</th>
               <th className="py-3 px-4 text-left">Action</th>
             </tr>
           </thead>

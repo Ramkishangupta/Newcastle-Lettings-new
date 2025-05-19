@@ -77,7 +77,7 @@ exports.deleteProperty = catchAsyncError(async (req, res, next) => {
     await cloudinary.uploader.destroy(image.public_id);
   }
 
-  await property.remove();
+  await property.deleteOne();
 
   res.status(200).json({
     success: true,

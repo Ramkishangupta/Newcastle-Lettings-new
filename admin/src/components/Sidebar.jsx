@@ -3,18 +3,18 @@ import { PlusCircle, ListChecks, ClipboardList } from 'lucide-react';
 
 const navItems = [
   {
-    to: '/add-items',
-    label: 'Add Items',
+    to: '/',
+    label: 'Add Property',
     icon: PlusCircle,
   },
   {
     to: '/list',
-    label: 'List Items',
+    label: 'List Property',
     icon: ListChecks,
   },
   {
-    to: '/orders',
-    label: 'Orders',
+    to: '/users',
+    label: 'Users',
     icon: ClipboardList,
   },
 ];
@@ -26,8 +26,9 @@ const Sidebar = () => {
   const responsiveClasses = 'flex-col justify-center sm:flex-row sm:justify-start sm:gap-2';
 
   return (
-    <aside className="w-16 sm:w-64 bg-white border-r border-gray-200 p-2 sm:p-4 mt-4">
-      <nav className="flex flex-col gap-3">
+<aside className="sticky top-20 h-full w-16 sm:w-64 bg-white border-r border-gray-200 p-2 sm:p-4 mt-0 z-50">
+
+      <nav className="flex flex-col gap-3 ">
         {navItems.map(({ to, label, icon: Icon }) => (
           <NavLink
             key={to}

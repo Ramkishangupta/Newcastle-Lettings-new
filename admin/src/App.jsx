@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import AddProperty from "./pages/AddProperty";
 import PropertyList from "./pages/PropertyList";
+import UsersList from "./pages/UserList";
 
 export const backendUrl = import.meta.env.VITE_BACKEND_URL
 function App() {
@@ -43,8 +44,9 @@ function App() {
               <Sidebar />
               <main className="flex-1 bg-gray-50 p-4 ">
                 <Routes>
-                  <Route path="/add-items" element={<AddProperty />} />
+                  <Route path="/" element={<AddProperty />} />
                   <Route path="/list" element={<PropertyList />} />
+                  <Route path="/users" element={<UsersList />} />
                 </Routes>
               </main>
             </div>

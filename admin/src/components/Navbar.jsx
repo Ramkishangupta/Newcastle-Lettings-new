@@ -1,5 +1,6 @@
 import React from "react";
 import { logoBlack } from "../assets/assets";
+import axios from "axios";
 import { backendUrl } from "../App"; 
 
 const Navbar = ({ onLogout }) => {

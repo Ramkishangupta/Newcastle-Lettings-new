@@ -13,6 +13,6 @@ const { isAuthenticatedUser, authorizeRoles } = require("../middleware/Auth");
 const router = express.Router();
 
 router.route("/properties").post(upload.array("images", 4), createProperty, isAuthenticatedUser, authorizeRoles("superadmin")).get(getAllProperties);
-router.route("/properties/:id").get(getPropertyById).put(updateProperty, isAuthenticatedUser, authorizeRoles("admin")).delete(deleteProperty, isAuthenticatedUser, authorizeRoles("admin"));
+router.route("/properties/:id").get(getPropertyById).put(updateProperty, isAuthenticatedUser, authorizeRoles("superadmin")).delete(deleteProperty, isAuthenticatedUser, authorizeRoles("superadmin"));
 
 module.exports = router;

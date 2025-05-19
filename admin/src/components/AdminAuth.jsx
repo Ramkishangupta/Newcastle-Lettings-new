@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { backendUrl } from "../App"; 
+import { backendUrl } from "../App";
 import { toast } from "react-toastify";
 
 const AdminAuth = ({ onAuthenticated }) => {
@@ -19,14 +19,24 @@ const AdminAuth = ({ onAuthenticated }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const endpoint = `${backendUrl}/api/v1/${mode === "login" ? "login" : "register"}`;
+    const endpoint = `${backendUrl}/api/v1/${
+      mode === "login" ? "login" : "register"
+    }`;
 
     try {
       setLoading(true);
-      const { data } = await axios.post(endpoint, formData, { withCredentials: true });
-      if (data.token) {
-        toast.success(`${mode === "login" ? "Login" : "Registration"} successful`);
+      const { data } = await axios.post(endpoint, formData, {
+        withCredentials: true,
+      });
+
+      // Check role
+      if (data?.user?.role === "admin" || data?.user?.role === "superadmin") {
+        toast.success(
+          `${mode === "login" ? "Login" : "Registration"} successful`
+        );
         onAuthenticated();
+      } else {
+        toast.error("You are not authorized to access the admin panel.");
       }
     } catch (err) {
       const errorMsg = err?.response?.data?.message || "Something went wrong";
@@ -95,10 +105,14 @@ const AdminAuth = ({ onAuthenticated }) => {
             type="submit"
             disabled={loading}
             className={`w-full py-2 text-white rounded-md transition ${
-              loading ? "bg-gray-400" : "bg-black hover:bg-gray-900"
+              loading ? "bg-gray-400" : "bg-black hover:bg-gray-900 cursor-pointer"
             }`}
           >
-            {loading ? "Processing..." : mode === "login" ? "Login" : "Register"}
+            {loading
+              ? "Processing..."
+              : mode === "login"
+              ? "Login"
+              : "Register"}
           </button>
         </form>
 
@@ -106,7 +120,7 @@ const AdminAuth = ({ onAuthenticated }) => {
           {mode === "login" ? "Don't have an account?" : "Already registered?"}{" "}
           <button
             type="button"
-            className="text-black font-medium hover:underline"
+            className="text-black font-medium hover:underline cursor-pointer"
             onClick={() => setMode(mode === "login" ? "register" : "login")}
           >
             {mode === "login" ? "Register here" : "Login"}

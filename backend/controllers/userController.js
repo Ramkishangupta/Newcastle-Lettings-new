@@ -2,7 +2,7 @@ const crypto = require("crypto");
 const User = require("../models/userModel");
 const catchAsyncError = require("../middleware/catchAsyncError");
 const ErrorHandler = require("../utils/errorHandler");
-const sendToken = require("../utils/jwtToken");
+const sendToken = require("../utils/sendToken");
 
 
 // Register User
@@ -63,7 +63,6 @@ exports.updateUserRole = catchAsyncError(async (req, res, next) => {
   });
 });
 
-
 // Forgot password
 exports.forgotPassword = catchAsyncError(async (req, res, next) => {
     const user = await User.findOne({ email: req.body.email });
@@ -118,7 +117,9 @@ exports.getUserDetails = catchAsyncError(async(req,res,next)=>{
 exports.logoutUser = catchAsyncError(async (req, res, next) => {
   res.cookie("token", null, {
     expires: new Date(Date.now()),
-    httpOnly: true
+    httpOnly: true,
+    sameSite: "Lax",
+secure: false
   });
 
   res.status(200).json({
