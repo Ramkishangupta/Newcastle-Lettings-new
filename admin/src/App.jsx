@@ -8,6 +8,7 @@ import AddProperty from "./pages/AddProperty";
 import PropertyList from "./pages/PropertyList";
 import UsersList from "./pages/UserList";
 import AddService from "./pages/addService";
+import UpdateService from "./pages/UpadateService";
 
 export const backendUrl = import.meta.env.VITE_BACKEND_URL
 function App() {
@@ -36,7 +37,7 @@ function App() {
     <>
       <div className="min-h-screen flex flex-col">
         <ToastContainer/>
-        {!isAuthenticated ? (
+        {isAuthenticated ? (
           <AdminAuth onAuthenticated={() => setIsAuthenticated(true)} />
         ) : (
           <>
@@ -49,6 +50,7 @@ function App() {
                   <Route path="/list" element={<PropertyList />} />
                   <Route path="/users" element={<UsersList />} />
                   <Route path="/service" element={<AddService />} />
+                  <Route path="/update-service" element={<UpdateService />} />
                 </Routes>
               </main>
             </div>

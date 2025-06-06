@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { MdAddCircle, MdChecklist, MdPeople, MdDesignServices} from 'react-icons/md';
+import { GrBusinessService } from "react-icons/gr";
 
 const navItems = [
   {
@@ -13,15 +14,20 @@ const navItems = [
     icon: MdChecklist,
   },
   {
+    to: '/service',
+    label:'Add Service',
+    icon: MdDesignServices,
+  },
+  {
+    to: '/update-service',
+    label:'Update Service',
+    icon: GrBusinessService,
+  },
+  {
     to: '/users',
     label: 'Users',
     icon: MdPeople,
   },
-  {
-    to: '/service',
-    label:'Add Service',
-    icon: MdDesignServices,
-  }
 ];
 
 const Sidebar = () => {
