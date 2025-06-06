@@ -31,10 +31,10 @@ const PropertyList = () => {
     try {
       await axios.delete(`${backendUrl}/api/v1/properties/${id}`);
       setProperties((prev) => prev.filter((property) => property._id !== id));
-      toast.success("Property deleted successfully ✅");
+      toast.success("Property deleted successfully");
     } catch (error) {
       console.error("Delete error:", error);
-      toast.error("Failed to delete property ❌"); 
+      toast.error("Failed to delete property"); 
     }
   };
 

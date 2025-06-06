@@ -7,7 +7,7 @@ const app = express();
 const errorMiddleware = require("./middleware/error");
 
 app.use(cors({
-  origin: 'http://localhost:5174', 
+  origin: ['http://localhost:5174', 'https://newcastle-lettings-new.vercel.app'], 
   credentials: true
 }));
 
