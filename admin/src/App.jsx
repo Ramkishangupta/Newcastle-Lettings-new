@@ -7,6 +7,7 @@ import Sidebar from "./components/Sidebar";
 import AddProperty from "./pages/AddProperty";
 import PropertyList from "./pages/PropertyList";
 import UsersList from "./pages/UserList";
+import AddService from "./pages/addService";
 
 export const backendUrl = import.meta.env.VITE_BACKEND_URL
 function App() {
@@ -47,6 +48,7 @@ function App() {
                   <Route path="/" element={<AddProperty />} />
                   <Route path="/list" element={<PropertyList />} />
                   <Route path="/users" element={<UsersList />} />
+                  <Route path="/service" element={<AddService />} />
                 </Routes>
               </main>
             </div>

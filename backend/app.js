@@ -17,9 +17,11 @@ app.use(cookieParser());
 //route import
 const propertyRoutes = require("./routes/propertyRoutes");
 const adminRoutes = require("./routes/userRoutes");
+const servicesRoutes = require("./routes/serviceRoutes");
 
 app.use("/api/v1", adminRoutes);
 app.use("/api/v1", propertyRoutes);
+app.use("/api/v1", servicesRoutes);
 
 
 //middleware for error

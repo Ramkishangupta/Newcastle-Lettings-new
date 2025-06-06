@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { backendUrl } from "../App";
+import { toast } from "react-toastify";
 
 const AddProperty = () => {
   const [form, setForm] = useState({
@@ -65,12 +66,30 @@ const AddProperty = () => {
       if (!response.ok) {
         throw new Error(data.message || "Something went wrong");
       }
+      toast.success("Property added successfully!");
+      // Reset form and images
+    setForm({
+      title: "",
+      desc: "",
+      location: "",
+      city: "",
+      beds: 0,
+      baths: 0,
+      floors: 0,
+      price: 0,
+      tenantType: "Any",
+      deposit: 0,
+      currentStatus: "Available",
+      epcRating: "",
+      councilTaxBand: "",
+      map: "",
+      availableFrom: "",
+    });
 
-      console.log("Property created successfully", data);
-      alert("Property added successfully!");
+    setImages([null, null, null, null]);
     } catch (error) {
-      console.error("Error submitting form:", error);
       alert("Failed to add property. " + error.message);
+      toast.error("Failed to add property: " + error.message);
     }
   };
 

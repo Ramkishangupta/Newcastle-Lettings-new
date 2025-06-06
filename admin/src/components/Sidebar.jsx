@@ -1,22 +1,27 @@
 import { NavLink } from 'react-router-dom';
-import { PlusCircle, ListChecks, ClipboardList } from 'lucide-react';
+import { MdAddCircle, MdChecklist, MdPeople, MdDesignServices} from 'react-icons/md';
 
 const navItems = [
   {
     to: '/',
     label: 'Add Property',
-    icon: PlusCircle,
+    icon: MdAddCircle,
   },
   {
     to: '/list',
     label: 'List Property',
-    icon: ListChecks,
+    icon: MdChecklist,
   },
   {
     to: '/users',
     label: 'Users',
-    icon: ClipboardList,
+    icon: MdPeople,
   },
+  {
+    to: '/service',
+    label:'Add Service',
+    icon: MdDesignServices,
+  }
 ];
 
 const Sidebar = () => {
