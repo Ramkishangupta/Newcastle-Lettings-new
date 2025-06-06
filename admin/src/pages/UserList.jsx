@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { backendUrl } from "../App"; 
+import Loader from '../components/Loader'; 
 
 const UsersList = () => {
   const [users, setUsers] = useState([]);
@@ -43,7 +44,7 @@ const UsersList = () => {
       <h2 className="text-xl font-semibold mb-4">All Users List</h2>
 
       {loading ? (
-        <p className="text-gray-500">Loading...</p>
+        <Loader/>
       ) : (
         <table className="w-full text-sm">
           <thead className="bg-gray-100 text-gray-700">

@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { MdDelete } from "react-icons/md";
 import { backendUrl } from "../App";
-import { toast } from "react-toastify"; // <-- Import toast
+import { toast } from "react-toastify"; 
+import Loader from "../components/Loader";
 
 const PropertyList = () => {
   const [properties, setProperties] = useState([]);
@@ -42,7 +43,7 @@ const PropertyList = () => {
       <h2 className="text-xl font-semibold mb-4">All Properties List</h2>
 
       {loading ? (
-        <p className="text-gray-500">Loading...</p>
+        <Loader/>
       ) : (
         <table className="w-full text-sm">
           <thead className="bg-gray-100 text-gray-700">
