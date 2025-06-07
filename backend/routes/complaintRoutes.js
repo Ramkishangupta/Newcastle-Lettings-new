@@ -3,6 +3,7 @@ const router = express.Router();
 const {
   createComplaint,
   getAllComplaints,
+  updateComplaintStatus
 } = require("../controllers/complaintController");
 const { isAuthenticatedUser, authorizeRoles } = require("../middleware/Auth");
 const upload = require("../middleware/multer");

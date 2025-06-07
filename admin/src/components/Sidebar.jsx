@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { MdAddCircle, MdChecklist, MdPeople, MdDesignServices} from 'react-icons/md';
 import { GrBusinessService } from "react-icons/gr";
+import { IoSettingsSharp } from "react-icons/io5";
 
 const navItems = [
   {
@@ -22,6 +23,11 @@ const navItems = [
     to: '/update-service',
     label:'Update Service',
     icon: GrBusinessService,
+  },
+  {
+    to: '/complaint',
+    label:'Complaint Status',
+    icon: IoSettingsSharp,
   },
   {
     to: '/users',

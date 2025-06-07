@@ -9,6 +9,7 @@ import PropertyList from "./pages/PropertyList";
 import UsersList from "./pages/UserList";
 import AddService from "./pages/addService";
 import UpdateService from "./pages/UpadateService";
+import ComplaintList from "./pages/ComplaintList";
 
 export const backendUrl = import.meta.env.VITE_BACKEND_URL
 function App() {
@@ -51,6 +52,7 @@ function App() {
                   <Route path="/users" element={<UsersList />} />
                   <Route path="/service" element={<AddService />} />
                   <Route path="/update-service" element={<UpdateService />} />
+                  <Route path="/complaint" element={<ComplaintList />} />
                 </Routes>
               </main>
             </div>
