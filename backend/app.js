@@ -7,7 +7,7 @@ const app = express();
 const errorMiddleware = require("./middleware/error");
 
 app.use(cors({
-  origin: ['http://localhost:5174', 'https://newcastle-lettings-new.vercel.app'], 
+  origin: ['http://localhost:5174','https://newcastle-lettings-new.vercel.app'], 
   credentials: true
 }));
 
@@ -18,10 +18,12 @@ app.use(cookieParser());
 const propertyRoutes = require("./routes/propertyRoutes");
 const adminRoutes = require("./routes/userRoutes");
 const servicesRoutes = require("./routes/serviceRoutes");
+const complaintRoutes = require("./routes/complaintRoutes");
 
 app.use("/api/v1", adminRoutes);
 app.use("/api/v1", propertyRoutes);
 app.use("/api/v1", servicesRoutes);
+app.use("/api/v1", complaintRoutes);
 
 
 //middleware for error
