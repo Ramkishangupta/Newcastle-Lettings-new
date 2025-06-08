@@ -19,8 +19,8 @@ router.route("/me").get(isAuthenticatedUser, getUserDetails);
 router.get("/logout", logoutUser);
 
 // Route to promote user to admin (only superadmin)
-router.put("/admin/user/:id", isAuthenticatedUser, authorizeRoles("superadmin"), updateUserRole);
-router.route("/admin/users").get(isAuthenticatedUser, authorizeRoles("superadmin"),getAllUsers);
+router.put("/user/:id", isAuthenticatedUser, authorizeRoles("superadmin"), updateUserRole);
+router.route("/users").get(isAuthenticatedUser, authorizeRoles("superadmin"),getAllUsers);
 // Reset password
 router.post("/password/forgot", forgotPassword);
 router.put("/password/reset/:token", resetPassword);

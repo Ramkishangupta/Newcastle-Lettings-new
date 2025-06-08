@@ -9,7 +9,7 @@ const UsersList = () => {
 
   const fetchUsers = async () => {
     try {
-      const { data } = await axios.get(`${backendUrl}/api/v1/admin/users`, {
+      const { data } = await axios.get(`${backendUrl}/api/v1/users`, {
         withCredentials: true, 
       });
       setUsers(data.users);
