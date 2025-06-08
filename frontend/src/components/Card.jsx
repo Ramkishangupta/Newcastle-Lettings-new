@@ -37,12 +37,12 @@ const Card = ({
           <br />
           <span className="text-sm text-blue-900">{location}</span>
         </h2>
-        <h3 className="text-xl font-bold mt-2 underline uppercase">{place}</h3>
+        <h3 className="text-xl font-bold mt-0.5 underline uppercase">{place}</h3>
         <p className="text-lg font-semibold mt-2">
           ${price}
           <span className="text-base font-normal"> pcm</span>
         </p>
-        <p className="text-sm mt-2">
+        <p className="text-sm mt-1">
           <span className="font-medium">Beds:</span> {beds}{" "}
           <span className="font-medium">Baths:</span> {baths}{" "}
           <span className="font-medium">Floors:</span> {floors}
@@ -50,7 +50,7 @@ const Card = ({
       </div>
 
       {/* Button Section */}
-      <div className="flex justify-center items-center p-4">
+      <div className="flex justify-center items-center p-3">
         <button
           type="button"
           onClick={handleClick}

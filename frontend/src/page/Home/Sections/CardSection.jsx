@@ -3,12 +3,12 @@ import Card from '../../../components/Card';
 import {PropertyContext} from '../../../context/propertyContext';
 
 const CardsSection = () => {
-  const { properties } = useContext(PropertyContext);
+  const { filteredProperties } = useContext(PropertyContext);
 
   return (
     <div className="flex flex-wrap gap-4 p-6 justify-center">
-      {properties.map((item) => (
-        <Card
+      {filteredProperties.map((item) => (
+        <Card 
           key={item._id}
           image={item.images[0]?.url || "/default.jpg"} 
           title={item.title}

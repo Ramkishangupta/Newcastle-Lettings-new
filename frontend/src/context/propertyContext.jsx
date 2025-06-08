@@ -9,6 +9,7 @@ const PropertyContextProvider = ({ children }) => {
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
   const [services, setServices] = useState([]);
   const [properties, setProperties] = useState([]);
+  const [filteredProperties, setFilteredProperties] = useState([]);
 
   // Fetch Services
   const fetchServices = async () => {
@@ -31,6 +32,7 @@ const PropertyContextProvider = ({ children }) => {
 
       if (res.data.success) {
         setProperties(res.data.properties || []);
+        setFilteredProperties(res.data.properties || []);
       } else {
         toast.error("Error fetching properties");
       }
@@ -55,6 +57,8 @@ const PropertyContextProvider = ({ children }) => {
     fetchServices,
     fetchProperties,
     refetchAll,
+    filteredProperties,
+    setFilteredProperties
   };
 
   return (

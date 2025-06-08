@@ -42,7 +42,7 @@ const Hamburger = memo(({ open }) => (
 // Desktop Navigation
 const DesktopNav = ({ navItems, isScrolled, setOpenDropdown, openDropdown }) => (
   <div className={`hidden md:flex items-center justify-between px-12 py-6 w-full ${isScrolled ? "bg-[#f0f0f0]" : "bg-transparent"}`}>
-    <img src={isScrolled ? logoBlack : logo} alt="Logo" className="w-50 h-full" />
+    <img src={isScrolled ? logoBlack : logo} alt="Logo" className="w-40 h-full" />
 
     <div className="flex-1 flex justify-center space-x-12">
       {navItems.map(({ name, dropdown, path }) => (
@@ -54,7 +54,7 @@ const DesktopNav = ({ navItems, isScrolled, setOpenDropdown, openDropdown }) => 
         >
           <Link
             to={path}
-            className={`relative font-medium flex items-center gap-2 cursor-pointer ${
+            className={`relative font-light font-montserrat flex items-center gap-2 cursor-pointer ${
               isScrolled ? "text-black" : "text-white"
             } after:absolute after:left-0 after:-bottom-4 after:h-[3px] after:w-0 after:bg-[#3b5be4] after:transition-all hover:after:w-full`}
           >
