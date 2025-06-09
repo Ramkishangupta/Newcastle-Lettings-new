@@ -1,16 +1,17 @@
-import React, { useContext } from "react";
-import { PropertyContext } from "./context/propertyContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar.jsx";
 import Home from "./page/Home/Home.jsx";
+import Footer from "./components/Footer.jsx";
+import Property from "./page/Property/Property.jsx";
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/properties/:propertyId" element={<Property/>} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </>
   );

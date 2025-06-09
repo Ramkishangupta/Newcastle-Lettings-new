@@ -15,7 +15,7 @@ const Card = ({
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/property/:{id}`);
+    navigate(`/properties/${id}`);
   };
 
   return (

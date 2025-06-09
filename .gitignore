@@ -19,6 +19,7 @@ build/
 .pnp.js
 
 # Environment variables
+config.env
 .env
 .env.*  # e.g., .env.development, .env.production
 

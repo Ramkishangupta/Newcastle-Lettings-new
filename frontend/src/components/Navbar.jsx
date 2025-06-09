@@ -30,6 +30,7 @@ const navItems = [
   { name: "Contact Us", path: "/contact" },
 ];
 
+
 // Hamburger Icon
 const Hamburger = memo(({ open }) => (
   <div className="w-7 h-7 flex flex-col justify-center items-center relative cursor-pointer">

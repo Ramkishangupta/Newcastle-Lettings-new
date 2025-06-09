@@ -62,7 +62,7 @@ const propertySchema = new mongoose.Schema({
         }
     ],
     map: {
-        type: String, // Could store Google Maps embed link or coordinates
+        type: String, 
         required: false,
     },
     availableFrom: {

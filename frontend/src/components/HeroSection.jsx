@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import PropertyFilter from "..//../../components/PropertyFilter";
+import PropertyFilter from "./PropertyFilter";
 function HeroSection({ images, label, heading, subheading }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
