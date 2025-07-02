@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import Navbar from '../../components/Navbar';
-import PropertyFilter from '../../components/PropertyFilter';
+import MembersSection from '../../components/MembersSection';
 import Card from '../../components/Card';
 import PropertyBanner from '../../components/PropertyBanner';
 import HeroSection from '../../components/HeroSection';
@@ -46,7 +46,7 @@ const Home = () => {
           />
         ))}
       </div>
-
+      <MembersSection/>
       {/* Property Banner Section */}
       <PropertyBanner
         title="Find Properties in Newcastle"
