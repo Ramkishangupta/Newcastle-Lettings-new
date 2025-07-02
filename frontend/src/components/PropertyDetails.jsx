@@ -22,7 +22,7 @@ const PropertyDetails = ({ property }) => {
 };
 
   return (
-    <div className="bg-white space-y-4 w-[90%] max-w-3xl mx-auto mt-6">
+    <div className="bg-white space-y-4 w-[90%] max-w-3xl mx-auto m-6">
       {/* Header Line */}
       <h2 className="text-lg font-semibold text-gray-800">
         *** £{price}PPPW – {beds} bedrooms – {tenantType?.toLowerCase()} – available {formatDate(availableFrom)} ***

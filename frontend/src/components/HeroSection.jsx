@@ -12,7 +12,7 @@ function HeroSection({ images, label, heading, subheading }) {
   }, [images.length]);
 
   return (
-    <div className="relative h-[80vh] overflow-hidden">
+    <div className="relative h-[90vh] overflow-hidden">
       {/* Background Image Slideshow */}
       {images.map((img, index) => (
         <div
@@ -31,13 +31,13 @@ function HeroSection({ images, label, heading, subheading }) {
       ))}
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/70 z-10" />
+      <div className="absolute inset-0 bg-[#061741]/80 z-10" />
 
       {/* Hero Content */}
-      <div className="relative z-20 flex items-center justify-center h-full text-center px-4">
+      <div className="relative z-20 flex h-full mt-40 text-center px-4">
         <div className="max-w-2xl mx-auto">
           {/* Top label */}
-          <p className="text-sm text-white/80 tracking-[0.2em] uppercase mb-6 inline-block border-b border-white/50 pb-1">
+          <p className="text-sm text-white/80 font-bold tracking-[0.2em] uppercase mb-6 inline-block border-b-3 border-white/50 pb-1">
             {label}
           </p>
 
@@ -47,9 +47,12 @@ function HeroSection({ images, label, heading, subheading }) {
           </h1>
 
           {/* Subheading */}
-          <p className="text-base sm:text-lg md:text-xl text-white/80 font-light leading-relaxed">
+          <p className="text-base sm:text-lg md:text-[18px] text-white/80 leading-relaxed">
             {subheading}
           </p>
+          <br />
+          <br />
+          <PropertyFilter/>
         </div>
       </div>
     </div>

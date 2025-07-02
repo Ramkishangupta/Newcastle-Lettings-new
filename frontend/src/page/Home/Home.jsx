@@ -24,10 +24,10 @@ const Home = () => {
         images={images}
         label="Properties"
         heading="Newcastle Lettings"
-        subheading="Excellence in property services"
+        subheading="Search properties for sale and to rent across the UK."
       />
       
-      <PropertyFilter />
+      {/* <PropertyFilter /> */}
 
       {/* Cards Section */}
       <div className="flex flex-wrap gap-4 p-6 justify-center">

@@ -37,7 +37,9 @@ const Card = ({
           <br />
           <span className="text-sm text-blue-900">{location}</span>
         </h2>
-        <h3 className="text-xl font-bold mt-0.5 underline uppercase">{place}</h3>
+        <h3 className="text-xl font-bold mt-0.5 underline uppercase">
+          {place}
+        </h3>
         <p className="text-lg font-semibold mt-2">
           ${price}
           <span className="text-base font-normal"> pcm</span>
@@ -54,13 +56,13 @@ const Card = ({
         <button
           type="button"
           onClick={handleClick}
-          className="relative w-[200px] py-2 border-2 border-[#2b3f7d] text-[#2b3f7d] font-semibold overflow-hidden z-0 group cursor-pointer"
+          className="relative w-[200px] py-2 border-2 border-[#2b3f7d] text-[#2b3f7d] font-semibold overflow-hidden z-0 group focus:outline-none focus:ring-2 focus:ring-[#2b3f7d] active:ring"
           aria-label={`View details for ${title}`}
         >
-          <span className="relative z-10 group-hover:text-white transition-colors duration-300">
+          <span className="relative z-10 group-hover:text-white group-focus:text-white group-active:text-white transition-colors duration-300">
             View
           </span>
-          <span className="absolute left-0 top-0 h-full w-0 bg-gradient-to-r from-[#2b3f7d] to-[#2b3f7d] transition-all duration-500 group-hover:w-full z-0" />
+          <span className="absolute left-0 top-0 h-full w-0 bg-gradient-to-r from-[#2b3f7d] to-[#2b3f7d] transition-all duration-500 group-hover:w-full group-focus:w-full group-active:w-full z-0" />
         </button>
       </div>
     </div>

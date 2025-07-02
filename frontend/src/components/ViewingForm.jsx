@@ -2,7 +2,7 @@ import React from "react";
 
 const ViewingForm = () => {
   return (
-    <div className="bg-[#f5f6f8] p-8 max-w-[500px] mx-auto rounded my-4">
+    <div className="bg-[#f5f6f8] p-9 max-w-[500px] mx-auto rounded my-8 h-[580px]">
       <h2 className="text-2xl font-bold text-[#0b1f4d] mb-6 font-playfair">
         ARRANGE A VIEWING
       </h2>
