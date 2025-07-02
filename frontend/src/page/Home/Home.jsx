@@ -30,7 +30,9 @@ const Home = () => {
       {/* <PropertyFilter /> */}
 
       {/* Cards Section */}
-      <div className="flex flex-wrap gap-4 p-6 justify-center">
+      <div className="flex flex-col items-center">
+        <h2 className="text-xl md:text-4xl font-semibold text-[#002B5B] m-6 font-montserrat border-b-2 pb-2 border-[#002B5B]">Featured Properties</h2>
+        <div className="flex flex-wrap gap-4 p-6 justify-center">
         {filteredProperties.map((item) => (
           <Card
             key={item._id}
@@ -45,6 +47,7 @@ const Home = () => {
             floors={item.floors}
           />
         ))}
+      </div>
       </div>
       <MembersSection/>
       {/* Property Banner Section */}

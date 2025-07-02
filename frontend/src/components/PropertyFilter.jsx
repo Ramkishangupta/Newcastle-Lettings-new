@@ -8,8 +8,6 @@ const PropertyFilter = () => {
   const [bedrooms, setBedrooms] = useState("Any");
   const [price, setPrice] = useState("Any");
   const [availability, setAvailability] = useState("Any");
-  const [baths, setBaths] = useState("Any");
-  const [floors, setFloors] = useState("Any");
 
   const handleFilter = () => {
     const result = properties.filter((property) => {
@@ -18,8 +16,6 @@ const PropertyFilter = () => {
         property.location.toLowerCase().includes(search.toLowerCase());
 
       const matchBeds = bedrooms === "Any" || property.beds === parseInt(bedrooms);
-      const matchBaths = baths === "Any" || property.baths === parseInt(baths);
-      const matchFloors = floors === "Any" || property.floors === parseInt(floors);
       const matchPrice =
         price === "Any" ||
         (price === "0-1000" && property.price <= 1000) ||
@@ -27,7 +23,7 @@ const PropertyFilter = () => {
         (price === "2000+" && property.price > 2000);
       const matchStatus = availability === "Any" || property.currentStatus === availability;
 
-      return matchArea && matchBeds && matchBaths && matchFloors && matchPrice && matchStatus;
+      return matchArea && matchBeds && matchPrice && matchStatus;
     });
 
     setFilteredProperties(result);
@@ -35,7 +31,7 @@ const PropertyFilter = () => {
 
   useEffect(() => {
     handleFilter();
-  }, [search, bedrooms, baths, floors, price, availability, properties]);
+  }, [search, bedrooms, price, availability, properties]);
 
   return (
     <div className="w-full px-6 py-10 bg-transparent">
